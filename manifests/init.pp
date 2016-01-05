@@ -37,7 +37,7 @@
 #
 class role_mysql (
   $mysql_root_password     = 'rootpassword',
-  $package_ensure          = '5.7.10',
+  $package_ensure          = '5.5.46-0ubuntu0.14.04.2',
   $remove_default_accounts = true,
   ) {
 
