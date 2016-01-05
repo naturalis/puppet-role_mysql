@@ -38,6 +38,7 @@
 class role_mysql (
   $mysql_root_password     = 'rootpassword',
   $remove_default_accounts = true,
+  $override_options        = 
   ) {
 
   # Install MySQL database
