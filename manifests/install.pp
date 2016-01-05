@@ -2,12 +2,11 @@
 #
 class role_mysql::install {
   
-  # Delete default MySQL accounts
-  class { 'mysql::server::account_security':}
-  
   # Install MySQL server
   class { 'mysql::server':
-    root_password => $role_mysql::mysql_root_password,
+    root_password           => $role_mysql::root_password,
+    package_ensure          => $role_mysql::package_ensure,
+    remove_default_accounts => $role_mysql::remove_default_accounts,
   } 
 
 }
