@@ -35,12 +35,4 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class role_mysql (
-  $mysql_root_password = 'rootpassword',
-  ) {
-
-  class { '::mysql::server':
-    root_password => $mysql_root_password,
-  } 
-
-}
+class role_mysql
