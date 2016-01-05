@@ -1,8 +1,6 @@
 # == Class: role_mysql::install
 #
-class role_mysql::install (
-  $mysql_root_password = 'rootpassword',
-  ) {
+class role_mysql::install {
   
   # Delete default MySQL accounts
   class { 'mysql::server::account_security':}
