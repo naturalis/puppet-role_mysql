@@ -35,4 +35,12 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class role_mysql
+class role_mysql (
+  $mysql_root_password = 'rootpassword',
+  ) {
+
+  # Install MySQL database
+  class { 'role_mysql::install':
+  } 
+
+}
