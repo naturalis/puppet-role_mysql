@@ -37,7 +37,7 @@
 #
 class role_mysql (
   $mysql_root_password     = 'rootpassword',
-  $package_ensure          = 
+  $package_ensure          = '5.7.10',
   $remove_default_accounts = true,
   ) {
 
