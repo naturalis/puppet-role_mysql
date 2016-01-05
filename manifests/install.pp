@@ -8,7 +8,7 @@ class role_mysql::install (
   class { 'mysql::server::account_security':}
   
   # Install MySQL server
-  class { '::mysql::server':
+  class { 'mysql::server':
     root_password => $role_mysql::mysql_root_password,
   } 
 
