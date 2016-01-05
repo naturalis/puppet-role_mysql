@@ -36,7 +36,9 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class role_mysql (
-  $mysql_root_password = 'rootpassword',
+  $mysql_root_password     = 'rootpassword',
+  $package_ensure          = 
+  $remove_default_accounts = true,
   ) {
 
   # Install MySQL database
