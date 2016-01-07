@@ -43,6 +43,9 @@ class role_mysql (
   
   # Create database(s)
   $db_hash = undef,
+  
+  # Create user(s)
+  $user_hash = undef,
   ) {
 
   # Install MySQL
@@ -51,6 +54,11 @@ class role_mysql (
 
   # Create database(s)
   class { 'role_mysql::db':
+    require => Class['role_mysql::install'],
+  }
+  
+  # Create user(s)
+  class { 'role_mysql::user':
     require => Class['role_mysql::install'],
   }
 
