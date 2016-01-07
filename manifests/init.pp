@@ -42,7 +42,7 @@ class role_mysql (
   $override_options        = undef,
   
   # Create database(s)
-  $database_hash = undef,
+  $db_hash = undef,
   ) {
 
   # Install MySQL
