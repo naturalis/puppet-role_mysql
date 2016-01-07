@@ -15,9 +15,7 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Role module to install and manage MySQL using Puppetlabs/MySQL module.
 
 ## Module Description
 
@@ -45,11 +43,11 @@ etc.), mention it here.
 
 ### Beginning with role_mysql
 
-The very basic steps needed for a user to get the module up and running.
+Parameters are set in init.pp. Use YAML file to override in the Foreman or
+using hiera.
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+Example YAML file can be found here:
+https://github.com/rudibroekhuizen/puppet-role_base/blob/master/files/server-mysql.yaml
 
 ## Usage
 
