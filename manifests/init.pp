@@ -41,8 +41,12 @@ class role_mysql (
   $override_options        = undef,
   ) {
 
-  # Install MySQL database
+  # Install MySQL
   class { 'role_mysql::install':
-  } 
+  }
+
+  # Create database(s)
+  class { 'role_mysql::database':
+  }
 
 }
