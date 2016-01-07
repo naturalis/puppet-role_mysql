@@ -2,6 +2,6 @@
 #
 class role_mysql::db {
 
-  create_resources('mysql::db', $role_mysql::database_hash)
+  create_resources('mysql::db', $role_mysql::db_hash)
   
 }
