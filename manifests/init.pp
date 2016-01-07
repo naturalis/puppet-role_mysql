@@ -39,6 +39,8 @@ class role_mysql (
   $mysql_root_password     = 'rootpassword',
   $remove_default_accounts = true,
   $override_options        = undef,
+  
+  $role_mysql::database_hash = undef,
   ) {
 
   # Install MySQL
