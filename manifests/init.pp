@@ -36,11 +36,13 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class role_mysql (
+  # Install MySQL
   $mysql_root_password     = 'rootpassword',
   $remove_default_accounts = true,
   $override_options        = undef,
   
-  $role_mysql::database_hash = undef,
+  # Create database(s)
+  $database_hash = undef,
   ) {
 
   # Install MySQL
