@@ -50,7 +50,7 @@ class role_mysql (
   }
 
   # Create database(s)
-  class { 'role_mysql::database':
+  class { 'role_mysql::db':
     require => Class['role_mysql::install'],
   }
 
