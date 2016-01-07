@@ -37,7 +37,7 @@
 #
 class role_mysql (
   $mysql_root_password     = 'rootpassword',
-  $remove_default_accounts = true,
+  $remove_default_accounts = undef,
   $override_options        = undef,
   ) {
 
