@@ -43,11 +43,8 @@ etc.), mention it here.
 
 ### Beginning with role_mysql
 
-Parameters are set in init.pp. Use YAML file to override in the Foreman or
-using hiera.
-
-Example YAML file can be found here:
-https://github.com/rudibroekhuizen/puppet-role_base/blob/master/files/server-mysql.yaml
+Parameters are set in init.pp. Use YAML file to override parameters using
+hiera or the Foreman.
 
 ## Usage
 
