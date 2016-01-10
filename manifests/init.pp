@@ -44,9 +44,6 @@ class role_mysql (
   
   # Create database(s)
   $db_hash = undef,
-  
-  # Create user(s)
-  $user_hash = undef,
   ) {
 
   # Install MySQL
