@@ -41,6 +41,7 @@ class role_mysql (
   $override_options        = undef,
   $remove_default_accounts = true,
   $users                   = undef,
+  $grants                  = undef,
   
   # Create database(s)
   $db_hash = undef,
