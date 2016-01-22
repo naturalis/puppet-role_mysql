@@ -7,7 +7,8 @@ class role_mysql::install {
     root_password           => $role_mysql::root_password,
     override_options        => $role_mysql::override_options,
     remove_default_accounts => $role_mysql::remove_default_accounts,
-    users                   => $role_mysql::users
+    users                   => $role_mysql::users,
+    grants                  => $role_mysql::grants
   } 
 
 }
