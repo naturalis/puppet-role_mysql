@@ -17,12 +17,6 @@ role_mysql::db_hash:
       - UPDATE
     import_timeout: 900
 
-# Create extra user    
-role_mysql::users:
-  my@localhost:
-    ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
-
 # Remote access
 role_mysql::grants:
   'my@localhost/mydb.*':
@@ -30,3 +24,9 @@ role_mysql::grants:
       - all
     table: 'mydb.*'
     user: 'my@localhost'
+
+# Create extra user    
+role_mysql::users:
+  my@localhost:
+    ensure: 'present'
+    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
