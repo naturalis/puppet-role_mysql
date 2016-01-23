@@ -6,6 +6,7 @@ role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
 
+# Create database
 role_mysql::db_hash:
   mydb:
     user: 'myuser'
@@ -15,12 +16,14 @@ role_mysql::db_hash:
       - SELECT
       - UPDATE
     import_timeout: 900
-    
+
+# Create extra user    
 role_mysql::users:
   my@localhost:
     ensure: 'present'
     password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
-    
+
+# Remote access
 role_mysql::grants:
   'my@localhost/mydb.*':
     privileges:
