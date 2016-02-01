@@ -40,7 +40,7 @@ class role_mysql (
   $mysql_root_password     = 'rootpassword',
   $override_options        = undef,
   $remove_default_accounts = true,
-  $user                    = undef,
+  $users                   = undef,
   $grants                  = undef,
   
   # Create database(s)
