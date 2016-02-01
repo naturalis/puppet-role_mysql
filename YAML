@@ -11,13 +11,16 @@ role_mysql::override_options:
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
-  'geneious@localhost':
+  'geneious':
     ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+    host: 'localhost'
+    #password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
     password: 'password'
-  'geneious@%':
+  'geneious':
     ensure: 'present'
-    password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+    host: '%'
+    #password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+    password: 'password'
 
 # Install MySQL server using mysql::server: grants
 role_mysql::grants:
