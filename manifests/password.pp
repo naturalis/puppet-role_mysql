@@ -1,12 +1,11 @@
-# == Class: role_mysql::user
+# == Class: role_mysql::password
 #
-class role_mysql::user {
+class role_mysql::password {
 
   if has_key($role_mysql::users, 'password') {
     $password = $role_mysql::users[password]
   }
-  file { "/tmp/$directory":
-    ensure => directory,
-    mode   => '600',
-  }
+  
+  notice( "$password" )
+  
 }
