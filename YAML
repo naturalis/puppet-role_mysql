@@ -9,17 +9,13 @@ role_mysql::override_options:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
 
-# Install MySQL server using mysql::users
+# Install MySQL server using mysql::server: users
 role_mysql::users:
-  'geneious':
+  'geneious@localhost':
     ensure: 'present'
-    host: 'localhost'
-    #password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
     password: 'password'
-  'geneious':
+  'geneious@%':
     ensure: 'present'
-    host: '%'
-    #password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
     password: 'password'
 
 # Install MySQL server using mysql::server: grants
