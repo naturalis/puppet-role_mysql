@@ -14,6 +14,7 @@ role_mysql::users:
   'geneious@localhost':
     ensure: 'present'
     password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
+    password: 'password'
   'geneious@%':
     ensure: 'present'
     password_hash: '*6C8989366EAF75BB670AD8EA7A7FC1176A95CEF4'
