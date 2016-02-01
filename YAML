@@ -9,7 +9,7 @@ role_mysql::override_options:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
 
-# Install MySQL server using mysql::server: users
+# Install MySQL server using mysql::users
 role_mysql::users:
   'geneious':
     ensure: 'present'
