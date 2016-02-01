@@ -57,7 +57,7 @@ class role_mysql (
   }
   
   # Create user(s)
-  class { 'role_mysql::user':
+  class { 'role_mysql::users':
     require => Class['role_mysql::install'],
   }
   
