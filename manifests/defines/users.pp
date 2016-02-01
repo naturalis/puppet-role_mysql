@@ -2,11 +2,10 @@
 #
 define role_mysql::defines::users (
   $password,
-  $host   = 'localhost',
   $ensure = 'present'
 ) {
     
-  mysql_user { "${name}@${host}":
+  mysql_user { "${title}":
     password_hash => mysql_password($password),
   }
 
