@@ -1,13 +1,9 @@
-# Define: role_mysql::user
+# == Class: role_mysql::user
 #
-define role_mysql::user (
-  $password,
-  $host   = 'localhost',
-  $ensure = 'present'
-) {
-    
-  mysql_user { "${name}@${host}":
-    password_hash => mysql_password($password),
-  }
+class role_mysql::user {
 
+  if ($role_mysql::user) {
+    create_resources('role_mysql::defines::user', $role_mysql::user)
+  }
+  
 }
