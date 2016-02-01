@@ -1,6 +1,6 @@
-# Define: role_mysql::defines::user
+# Define: role_mysql::defines::users
 #
-define role_mysql::defines::user (
+define role_mysql::defines::users (
   $password,
   $host   = 'localhost',
   $ensure = 'present'
