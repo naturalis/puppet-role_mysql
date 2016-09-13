@@ -39,6 +39,7 @@ class role_mysql (
   # Install MySQL
   $mysql_root_password     = 'rootpassword',
   $override_options        = undef,
+  $package_ensure          = undef,
   $remove_default_accounts = true,
   $users                   = undef,
   $grants                  = undef,
