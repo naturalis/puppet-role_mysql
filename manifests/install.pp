@@ -8,7 +8,7 @@ class role_mysql::install {
     override_options        => $role_mysql::override_options,
     remove_default_accounts => $role_mysql::remove_default_accounts,
     grants                  => $role_mysql::grants,
-    package_name            => $role_mysql::package_name
+    package_name            => $role_mysql::server_package_name
   }
 
   # Install MySQL client
