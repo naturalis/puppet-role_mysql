@@ -11,8 +11,9 @@ class role_mysql::install {
     package_name            => $role_mysql::package_name
   }
 
+  # Install MySQL client
   class { 'mysql::client':
-    package_name            => $role_mysql::client_package_name
+    package_name => $role_mysql::client_package_name
   }
 
 }
