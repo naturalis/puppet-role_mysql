@@ -13,10 +13,10 @@ role_mysql::override_options:
 role_mysql::users:
   'geneious@localhost':
     ensure: 'present'
-    password: 'password'
+    password: 'mypass'
   'geneious@%':
     ensure: 'present'
-    password: 'password'
+    password: 'mypass'
 
 # Install MySQL server using mysql::server: grants
 role_mysql::grants:
