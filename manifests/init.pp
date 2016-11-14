@@ -42,8 +42,8 @@ class role_mysql (
   $remove_default_accounts = true,
   $users                   = undef,
   $grants                  = undef,
-  $server_package_name     = 'mysql-server-5.6',
-  $client_package_name     = 'mysql-client-5.6',
+  $server_package_name     = undef,
+  $client_package_name     = undef,
 
   # Create database(s)
   $db_hash = undef,
