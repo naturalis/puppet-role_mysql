@@ -1,0 +1,42 @@
+# Example YAML file to override parameters using hiera or the Foreman
+
+# Install MySQL server using mysql::server: root_password
+role_mysql::mysql_root_password: 'mypass'
+
+# Install MySQL server using mysql::server: override_options
+role_mysql::override_options:
+  mysqld:
+    bind-address: '0.0.0.0'
+    max_allowed_packet: '512M'
+    innodb_flush_log_at_trx_commit: '0'
+
+# Install MySQL server using mysql::server: users
+role_mysql::users:
+  'sakila@localhost':
+    ensure: 'present'
+    password: 'mypass'
+  'sakila@%':
+    ensure: 'present'
+    password: 'mypass'
+
+# Install MySQL server using mysql::server: grants
+role_mysql::grants:
+  'sakila@localhost/sakila.*':
+    privileges:
+      - ALL
+    table: 'sakila.*'
+    user: 'sakila@localhost'
+  'sakila@%/sakila.*':
+    privileges:
+      - ALL
+    table: 'sakila.*'
+    user: 'sakila@%'
+
+# Create databases using mysql::db with initial user
+role_mysql::db_hash:
+  sakila:
+    user: 'manager'
+    password: 'mypass'
+    host: 'localhost'
+    grant:
+      - SELECT
