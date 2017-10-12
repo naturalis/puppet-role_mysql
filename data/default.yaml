@@ -9,6 +9,7 @@ role_mysql::override_options:
     bind-address: '0.0.0.0'
     max_allowed_packet: '512M'
     innodb_flush_log_at_trx_commit: '0'
+    innodb_log_file_size: '1G'
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
