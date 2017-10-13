@@ -11,6 +11,7 @@ role_mysql::override_options:
     innodb_flush_log_at_trx_commit: '0'
     innodb_log_file_size: '1G'
     innodb_flush_method: 'O_DIRECT'
+    innodb_buffer_pool_instances: '8'
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
