@@ -44,12 +44,12 @@ class role_mysql (
   $server_package_name      = undef,
   $client_package_name      = undef,
   $db_hash                  = undef,
-  $override_options_static  = undef,
+  $override_options         = undef,
   $override_options_dynamic = { 'mysqld' => { 
                                   'innodb_buffer_pool_size' => $facts['memory']['system']['total_bytes'] * 3/4 
 			        } 
 			      },
-  $override_hash            = deep_merge($override_options_static, $override_options_dynamic)
+  $override_hash            = deep_merge($override_options, $override_options_dynamic)
   ) {
 
   # Install MySQL
