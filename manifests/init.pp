@@ -37,16 +37,19 @@
 #
 class role_mysql (
   # Install MySQL
-  $mysql_root_password     = 'rootpassword',
-  $override_options        = undef,
-  $remove_default_accounts = true,
-  $users                   = undef,
-  $grants                  = undef,
-  $server_package_name     = undef,
-  $client_package_name     = undef,
-
-  # Create database(s)
-  $db_hash = undef,
+  $mysql_root_password      = 'rootpassword',
+  $remove_default_accounts  = true,
+  $users                    = undef,
+  $grants                   = undef,
+  $server_package_name      = undef,
+  $client_package_name      = undef,
+  $db_hash                  = undef,
+  $override_options_static  = undef,
+  $override_options_dynamic = { 'mysqld' => { 
+                                  'innodb_buffer_pool_size' => $facts['memory']['system']['total_bytes'] * 3/4 
+			        } 
+			      },
+  $override_hash            = deep_merge($override_options_static, $override_options_dynamic)
   ) {
 
   # Install MySQL
