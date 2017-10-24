@@ -13,6 +13,7 @@ role_mysql::override_options:
     innodb_flush_method: 'O_DIRECT'
     innodb_buffer_pool_instances: '8'
     innodb_thread_concurrency: '8'
+    skip_name_resolve: 'on'
 
 # Create users
 role_mysql::users:
