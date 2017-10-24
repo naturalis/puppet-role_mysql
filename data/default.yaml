@@ -16,6 +16,9 @@ role_mysql::override_options:
 
 # Install MySQL server using mysql::server: users
 role_mysql::users:
+  'analytics@%':
+    ensure: 'present'
+    password: 'mypass'
   'sakila@localhost':
     ensure: 'present'
     password: 'mypass'
@@ -25,6 +28,12 @@ role_mysql::users:
 
 # Install MySQL server using mysql::server: grants
 role_mysql::grants:
+  'analytics@%/mysql.*':
+    privileges:
+      - SELECT
+      - DELETE
+    table: 'mysql.*'
+    user: 'analytics@%'
   'sakila@localhost/sakila.*':
     privileges:
       - ALL
