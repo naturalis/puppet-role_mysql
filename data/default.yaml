@@ -3,7 +3,7 @@
 # Install MySQL server using mysql::server: root_password
 role_mysql::mysql_root_password: 'mypass'
 
-# Install MySQL server using mysql::server: override_options
+# Install MySQL server
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
@@ -14,7 +14,7 @@ role_mysql::override_options:
     innodb_buffer_pool_instances: '8'
     innodb_thread_concurrency: '8'
 
-# Install MySQL server using mysql::server: users
+# Create users
 role_mysql::users:
   'analytics@%':
     ensure: 'present'
@@ -26,7 +26,7 @@ role_mysql::users:
     ensure: 'present'
     password: 'mypass'
 
-# Install MySQL server using mysql::server: grants
+# Set grants
 role_mysql::grants:
   'analytics@%/mysql.*':
     privileges:
@@ -45,7 +45,7 @@ role_mysql::grants:
     table: 'sakila.*'
     user: 'sakila@%'
 
-# Create databases using mysql::db with initial user
+# Create databases
 role_mysql::db_hash:
   sakila:
     user: 'manager'
