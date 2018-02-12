@@ -4,6 +4,7 @@
 role_mysql::mysql_root_password: 'mypass'
 
 # Set options
+# innodb_file_per_table: 'on' is default from MySQL version 5.6.6
 role_mysql::override_options:
   mysqld:
     bind-address: '0.0.0.0'
@@ -14,6 +15,7 @@ role_mysql::override_options:
     innodb_buffer_pool_instances: '8'
     innodb_thread_concurrency: '8'
     skip_name_resolve: 'on'
+    innodb_file_per_table: 'on'
 
 # Create users
 role_mysql::users:
