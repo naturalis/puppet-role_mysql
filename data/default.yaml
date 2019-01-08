@@ -1,7 +1,9 @@
 # Example YAML file to override parameters using hiera or the Foreman
 
-# Install MySQL server
+# Install MySQL
 role_mysql::mysql_root_password: 'mypass'
+role_mysql::server_package_name: '5.7'
+role_mysql::client_package_name: '5.7'
 
 # Set options
 # innodb_file_per_table: 'on' is default from MySQL version 5.6.6
