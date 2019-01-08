@@ -2,8 +2,8 @@
 
 # Install MySQL
 role_mysql::mysql_root_password: 'mypass'
-role_mysql::package_name_server: '5.7'
-role_mysql::package_name_client: '5.7'
+role_mysql::package_name_server: 'mysql-server-5.7'
+role_mysql::package_name_client: 'mysql-client-5.7'
 
 # Set options
 # innodb_file_per_table: 'on' is default from MySQL version 5.6.6
