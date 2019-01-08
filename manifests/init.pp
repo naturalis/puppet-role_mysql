@@ -6,8 +6,8 @@ class role_mysql (
   $remove_default_accounts  = true,
   $users                    = undef,
   $grants                   = undef,
-  $server_package_name      = undef,
-  $client_package_name      = undef,
+  $package_name_server      = undef,
+  $package_name_client      = undef,
   $db_hash                  = undef,
   $override_options         = undef,
   $override_options_dynamic = { 'mysqld' => { 
