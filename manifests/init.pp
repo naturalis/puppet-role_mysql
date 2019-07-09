@@ -10,7 +10,7 @@ class role_mysql (
   $package_name_client      = undef,
   $db_hash = "
 ---  
-sakila:
+sakilaaaa:
   user: 'manager'
   password: 'mypass'
   host: 'localhost'
@@ -31,8 +31,8 @@ sakila:
   }
 
   # Create database(s)
-  class { 'role_mysql::db':
-    require => Class['role_mysql::install'],
+  if ($role_mysql::db_hash) {
+    create_resources(postgresql::server::db, parseyaml($db_hash,$db_hash))
   }
 
   # Create user(s)
