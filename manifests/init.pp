@@ -41,7 +41,7 @@ class role_mysql (
   ",
   $db_hash = "
 ---  
-sakilaaaa:
+sakila:
   user: 'manager'
   password: 'mypass'
   host: 'localhost'
