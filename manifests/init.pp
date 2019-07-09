@@ -6,7 +6,19 @@ class role_mysql (
   $package_name_client      = undef,
   $mysql_root_password      = 'rootpassword',
   $remove_default_accounts  = true,
-  $users                    = undef,
+  $users = "
+---
+'analytics@%':
+  ensure: 'present'
+  password: 'mypass'
+'sakila@localhost':
+  ensure: 'present'
+  password: 'mypass'
+'sakila@%':
+  ensure: 'present'
+  password: 'mypass'
+...
+  ",
   $grants = "
 ---
 'analytics@%/mysql.*':
@@ -72,10 +84,13 @@ mysqld:
   }
 
   # Create user(s)
-  class { 'role_mysql::users':
-    require => Class['role_mysql::install'],
-  }
- 
+  #class { 'role_mysql::users':
+  #  require => Class['role_mysql::install'],
+  #}
+  
+  # Create user(s)
+  create_resources(mysql_user, parseyaml($users,$users)) 
+  
   # Set grants
   create_resources(mysql_grant, parseyaml($grants,$grants))
  
