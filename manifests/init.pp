@@ -5,7 +5,26 @@ class role_mysql (
   $mysql_root_password      = 'rootpassword',
   $remove_default_accounts  = true,
   $users                    = undef,
-  $grants                   = undef,
+  $grants = "
+---
+'analytics@%/mysql.*':
+  privileges:
+    - SELECT
+    - DELETE
+  table: 'mysql.*'
+  user: 'analytics@%'
+'sakila@localhost/sakila.*':
+  privileges:
+    - ALL
+  table: 'sakila.*'
+  user: 'sakila@localhost'
+'sakila@%/sakila.*':
+  privileges:
+    - ALL
+  table: 'sakila.*'
+  user: 'sakila@%'
+...
+  ",
   $package_name_server      = undef,
   $package_name_client      = undef,
   $db_hash = "
