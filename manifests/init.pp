@@ -2,6 +2,8 @@
 #
 class role_mysql (
   # Install MySQL
+  $package_name_server      = undef,
+  $package_name_client      = undef,
   $mysql_root_password      = 'rootpassword',
   $remove_default_accounts  = true,
   $users                    = undef,
@@ -25,8 +27,6 @@ class role_mysql (
   user: 'sakila@%'
 ...
   ",
-  $package_name_server      = undef,
-  $package_name_client      = undef,
   $db_hash = "
 ---  
 sakilaaaa:
