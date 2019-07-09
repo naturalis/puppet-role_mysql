@@ -58,5 +58,8 @@ sakilaaaa:
   class { 'role_mysql::users':
     require => Class['role_mysql::install'],
   }
-  
+ 
+  # Set grants
+  create_resources(mysql_grant, parseyaml($grants,$grants))
+ 
 }
