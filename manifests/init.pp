@@ -2,9 +2,9 @@
 #
 class role_mysql (
   # Install MySQL
-  $package_name_server      = mysql-server-5.7,
-  $package_name_client      = mysql-client-5.7,
-  $mysql_root_password      = changeme,
+  $package_name_server      = 'mysql-server-5.7',
+  $package_name_client      = 'mysql-client-5.7',
+  $mysql_root_password      = 'changeme',
   $remove_default_accounts  = true,
   $users = "
 ---
