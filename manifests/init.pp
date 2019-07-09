@@ -37,7 +37,7 @@ sakilaaaa:
 
   # Create database(s)
   if ($role_mysql::db_hash) {
-    create_resources(postgresql::server::db, parseyaml($db_hash,$db_hash))
+    create_resources(mysql::db, parseyaml($db_hash,$db_hash))
   }
 
   # Create user(s)
