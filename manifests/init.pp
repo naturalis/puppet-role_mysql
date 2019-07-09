@@ -8,7 +8,16 @@ class role_mysql (
   $grants                   = undef,
   $package_name_server      = undef,
   $package_name_client      = undef,
-  $db_hash                  = undef,
+  $db_hash = "
+---  
+sakila:
+  user: 'manager'
+  password: 'mypass'
+  host: 'localhost'
+  grant:
+    - SELECT
+...
+  ",
   $override_options         = undef,
   $override_options_dynamic = { 'mysqld' => { 
                                   'innodb_buffer_pool_size' => $facts['memory']['system']['total_bytes'] * 3/4 
