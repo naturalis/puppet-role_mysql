@@ -26,18 +26,13 @@ sakilaaaa:
   $override_hash            = deep_merge($override_options, $override_options_dynamic)
   ) {
 
-  stage { 'first':
-    before => Stage["main"],
-  }
-
   # Install MySQL
   class { 'role_mysql::install':
-    stage => first,
   }
 
   # Create database(s)
-  if ($role_mysql::db_hash) {
-    create_resources(mysql::db, parseyaml($db_hash,$db_hash))
+  class { 'role_mysql::db':
+    require => Class['role_mysql::install'],
   }
 
   # Create user(s)
